@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <link th:href="@{/css/styles.css}" rel="stylesheet">
+    <link th:href="@{/css/styles.css}" rel="stylesheet">
+</head>
+<body>
+<div th:fragment="topnav">
+    <div class="sidebar" id="sidebar">
+        <a class="navbar-brand" href="#">
+            <img src="https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2013/11/fakebook.jpg" alt="Facebook Logo" width="100" height="50">
+        </a>
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="/index">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/users">Users</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/users/followed">Followed Users</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/post/all">Posts</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/post/own">My Posts</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/post/add">Add Post</a>
+            </li>
+            <a class="nav-link" href="/post/mentions">
+            <li class="nav-item">
+                <a class="nav-link" href="/logout">Logout</a>
+            </li>
+        </ul>
+        <div class="sidebar-toggler" id="sidebarToggler">&#9776;</div>
+    </div>
+    <div class="container">
+        <div class="main-content">
+            <!-- Your main content goes here -->
+        </div>
+    </div>
+</div>
+<script>
+        document.getElementById('sidebarToggler').addEventListener('click', function() {
+            var sidebar = document.getElementById('sidebar');
+            if (sidebar.style.left === '0px') {
+                sidebar.style.left = '-250px';
+            } else {
+                sidebar.style.left = '0px';
+            }
+        });
+    </script>
+</body>
+</html>
